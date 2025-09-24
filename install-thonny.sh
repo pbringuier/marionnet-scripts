@@ -48,7 +48,7 @@ echo ">>> apt-get update..."
 apt-get -o Acquire::Retries=3 update || true
 
 echo ">>> Installation de Python3 et Tkinter..."
-apt-get install -y python3 python3-tk idle3 || true
+apt-get install -y python3 python3-tk || true
 
 echo ">>> Installation de pip (via get-pip.py)..."
 cd /tmp
