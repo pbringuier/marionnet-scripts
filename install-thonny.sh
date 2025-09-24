@@ -48,19 +48,18 @@ echo ">>> apt-get update..."
 apt-get -o Acquire::Retries=3 update || true
 
 echo ">>> Installation de Python3 et Tkinter..."
-apt-get install -y python3 python3-tk || true
+apt-get install -y python3 python3-tk idle3 || true
 
 echo ">>> Installation de pip (via get-pip.py)..."
 cd /tmp
 curl -L -k https://bootstrap.pypa.io/pip/3.6/get-pip.py -o get-pip.py
 python3 get-pip.py
 
-echo ">>> Installation de Thonny (version <3.4)..."
-pip3 install "thonny<3.4"
+echo ">>> Installation de Thonny (version <3.4) et dépendances TP..."
+pip3 install "thonny<3.4" matplotlib pytest
 
 echo ">>> Vérification..."
 which thonny || true
-thonny --version || true
 
 echo "✅ Installation terminée. Lance 'thonny' pour démarrer."
 
